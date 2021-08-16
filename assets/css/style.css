@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+:root {
+  --primary-050: #009EFB;
+  --primary-100: #0090E4;
+  --primary-200: #0083CF;
+  --primary-300: #0077BC;
+  --primary-400: #006CAB;
+  --primary-500: #00629B;
+  --primary-600: #00588B;
+  --primary-700: #004F7D;
+  --primary-800: #004770;
+  --primary-900: #004065;
+
+
+  --secondary-050: #F5E6EF;
+  --secondary-100: #EBCCDF;
+  --secondary-200: #D799BE;
+  --secondary-300: #C3669E;
+  --secondary-400: #AF337D;
+  --secondary-500: #9B005D;
+  --secondary-600: #8B0054;
+  --secondary-700: #7D004C;
+  --secondary-800: #700044;
+  --secondary-900: #65003D;
+
+
+  --tertiary-050: #F5F3E6;
+  --tertiary-100: #EBE6CC;
+  --tertiary-200: #D7CD99;
+  --tertiary-300: #C3B566;
+  --tertiary-400: #AF9C33;
+  --tertiary-500: #9B8300;
+  --tertiary-600: #8B7600;
+  --tertiary-700: #7D6A00;
+  --tertiary-800: #705F00;
+  --tertiary-900: #655500;
+
+
+
+
+  --bg-light: #F3F6F6;
+
+  --border-lightgray: rgba(0, 0, 0, 0.1);
+  --border-lightwhite: rgba(255, 255, 255, 0.4);
+
+}
+
+html {
+  line-height: 0;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+}
+
+@media screen and (max-width:1080px) {
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+  }
+}
+
+
+body {
+  font-family: noto-sans-cjk-jp, sans-serif, ヒラギノ角ゴPro W3, Hiragino Kaku Gothic Pro, 游ゴシック, Yu Gothic, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  color: var(--text-color);
+}
+
+/* reset */
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+button,
+a {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
+a,
+button {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* main */
+
+main {
+  margin: 0 0 0;
+  overflow: hidden;
+}

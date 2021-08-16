@@ -20,10 +20,9 @@ export default {
   },
 
 
-
-
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/css/normalize',
+    '~/assets/css/style',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -35,7 +34,17 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    'nuxt-microcms-module',
+    ['@nuxtjs/moment', ['ja']],
+    '~/modules/api-build-json',
   ],
+  microcms: {
+    options: {
+      serviceDomain: process.env.SERVICE_DOMAIN,
+      apiKey: process.env.API_KEY,
+    },
+    mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
