@@ -1,5 +1,6 @@
 <template>
   <div>
+    <EyeCatch />
     <ul>
       <li v-for="content in contents" :key="content.id">
         <nuxt-link :to="`/${content.id}`">
@@ -26,7 +27,12 @@
 </template>
 
 <script>
+import EyeCatch from "@/components/eyeCatch.vue";
+
 export default {
+  mounted() {
+    this.$adobeFonts(document);
+  },
   async asyncData({ $microcms }) {
     const data = await $microcms.get({
       endpoint: "news",
@@ -38,6 +44,9 @@ export default {
     getTheDate(date) {
       return this.$moment(date).format("YYYY.M.D");
     },
+  },
+  components: {
+    EyeCatch,
   },
 };
 </script>
