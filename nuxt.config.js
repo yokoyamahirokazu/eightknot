@@ -51,10 +51,10 @@ export default {
 
   microcms: {
     options: {
-      serviceDomain: process.env.SERVICE_DOMAIN,
-      apiKey: process.env.API_KEY,
+      serviceDomain: SERVICE_DOMAIN,
+      apiKey: API_KEY,
     },
-    mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
+    mode: NODE_ENV === 'production' ? 'server' : 'all',
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
