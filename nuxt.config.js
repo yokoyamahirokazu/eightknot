@@ -39,7 +39,16 @@ export default {
     ['@nuxtjs/moment', ['ja']],
     '~/modules/api-build-json',
     'nuxt-svg-loader',
+    // '@aceforth/nuxt-optimized-images',
   ],
+
+  // optimizedImages: {
+  //   optimizeImages: true,
+  //   optimizeImagesInDev: true,
+  // },
+
+
+
   microcms: {
     options: {
       serviceDomain: process.env.SERVICE_DOMAIN,

@@ -8,7 +8,7 @@
 
     <nav v-bind:class="{ active: navOpen }">
       <div class="nav_logo">
-        <LogoHolizontal />
+        <SVGElement name="EightKnot_logo_horizontal" />
         <button class="menu-btn close" v-on:click="navOpen = !navOpen">
           <span></span>
         </button>
@@ -16,58 +16,47 @@
       <ul>
         <li>
           <nuxt-link @click.native="navOpen = !navOpen" to="/"
-            ><HomeSvg /> Home</nuxt-link
+            ><SVGElement name="home" /> Home</nuxt-link
           >
         </li>
         <li>
-          <nuxt-link @click.native="navOpen = !navOpen" to="#news"
-            ><NewsSvg /> News</nuxt-link
+          <nuxt-link @click.native="navOpen = !navOpen" to="/news"
+            ><SVGElement name="news" /> News</nuxt-link
           >
         </li>
         <li>
-          <nuxt-link @click.native="navOpen = !navOpen" to="#vision"
-            ><VisionSvg /> Vision</nuxt-link
-          >
-        </li>
-        <li>
-          <nuxt-link @click.native="navOpen = !navOpen" to="#team"
-            ><TeamSvg /> Team</nuxt-link
-          >
-        </li>
-        <li>
-          <nuxt-link @click.native="navOpen = !navOpen" to="#blog"
-            ><BlogSvg /> Blog</nuxt-link
+          <a
+            href="https://note.com/8kt/"
+            target="_blank"
+            @click.native="navOpen = !navOpen"
+            to="#blog"
+            ><SVGElement name="blog" /> Blog</a
           >
         </li>
         <li>
           <nuxt-link @click.native="navOpen = !navOpen" to="/about"
-            ><AboutSvg /> About</nuxt-link
+            ><SVGElement name="about" /> About</nuxt-link
           >
         </li>
         <li>
           <nuxt-link @click.native="navOpen = !navOpen" to="/contact"
-            ><ContactSvg /> Contact</nuxt-link
+            ><SVGElement name="contact" /> Contact</nuxt-link
           >
         </li>
         <li class="sns_link">
-          <a href=""> <TwitterSvg /> </a>
-          <a href=""> <FacebookSvg /> </a>
+          <a target="_blank" href="https://www.facebook.com/8ktjp">
+            <SVGElement name="facebook" />
+          </a>
+          <a target="_blank" href="https://twitter.com/8ktjp">
+            <SVGElement name="twitter" />
+          </a>
         </li>
       </ul>
     </nav>
   </div>
 </template>
 <script>
-import LogoHolizontal from "@/assets/img/EightKnot_logo_horizontal.svg";
-import AboutSvg from "@/assets/icon/about.svg";
-import BlogSvg from "@/assets/icon/blog.svg";
-import ContactSvg from "@/assets/icon/contact.svg";
-import FacebookSvg from "@/assets/icon/facebook.svg";
-import HomeSvg from "@/assets/icon/home.svg";
-import NewsSvg from "@/assets/icon/news.svg";
-import TeamSvg from "@/assets/icon/team.svg";
-import TwitterSvg from "@/assets/icon/twitter.svg";
-import VisionSvg from "@/assets/icon/vision.svg";
+import SVGElement from "@/components/svgs.vue";
 
 export default {
   data() {
@@ -75,18 +64,6 @@ export default {
       navOpen: false,
     };
   },
-  components: {
-    LogoHolizontal,
-    AboutSvg,
-    BlogSvg,
-    ContactSvg,
-    AboutSvg,
-    FacebookSvg,
-    HomeSvg,
-    NewsSvg,
-    TeamSvg,
-    TwitterSvg,
-    VisionSvg,
-  },
+  components: { SVGElement },
 };
 </script>
