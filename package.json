@@ -16,6 +16,7 @@
     "fs-extra": "^10.0.0",
     "nuxt": "^2.15.7",
     "nuxt-microcms-module": "^1.0.1",
+    "vee-validate": "^3.4.11",
     "vue-js-modal": "^2.0.1",
     "vue-loaders": "^4.1.4",
     "xml2js": "^0.4.23"
