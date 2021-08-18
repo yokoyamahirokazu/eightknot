@@ -18,73 +18,44 @@
             <div class="content_box_wrapper">
               <h2 class="headline_2">Contact Form</h2>
               <div class="content_box">
-                <form
-                  class="p-contact__form"
-                  name="contact"
-                  method="POST"
-                  data-netlify="true"
-                  data-netlify-honeypot="bot-field"
-                  @submit.prevent="onSubmit"
-                  :class="sendingClass"
-                >
-                  <input type="hidden" name="form-name" value="contact" />
-
-                  <div class="p-contact__item">
-                    <label for="username">お名前</label>
-                    <input
-                      type="text"
-                      id="username"
-                      name="username"
-                      v-model="username"
-                      autocomplete="name"
-                    />
-                  </div>
-                  <!-- /.p-contact__item -->
-
-                  <div class="p-contact__item">
-                    <label for="katakana">フリガナ</label>
-                    <input
-                      type="text"
-                      id="katakana"
-                      name="katakana"
-                      v-model="katakana"
-                    />
-                  </div>
-                  <!-- /.p-contact__item -->
-
-                  <div class="p-contact__item">
-                    <label for="useremail">メールアドレス</label>
-                    <input
-                      type="text"
-                      id="useremail"
-                      name="useremail"
-                      v-model="useremail"
-                      autocomplete="email"
-                    />
-                  </div>
-                  <!-- /.p-contact__item -->
-
-                  <div class="p-contact__item">
-                    <label for="message">お問い合わせ内容</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      v-model="message"
-                    ></textarea>
-                  </div>
-                  <!-- /.p-contact__item -->
-
-                  <div class="p-contact__item" v-show="false">
-                    <label for="message">スパムでない場合は空欄</label>
-                    <input type="text" name="bot-field" v-model="botField" />
-                  </div>
-                  <!-- /.p-contact__item -->
-
-                  <div class="p-contact__submit">
-                    <button type="submit">送信</button>
-                  </div>
-                  <!-- /.p-contact__submit -->
-                </form>
+                <template v-if="!finished">
+                  <form
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    @submit.prevent
+                  >
+                    <p>
+                      <label>
+                        お名前:
+                        <input v-model="form.name" type="text" name="name" />
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        メールアドレス:
+                        <input v-model="form.email" type="email" name="email" />
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        お問い合わせ内容:
+                        <textarea
+                          id="form-content"
+                          v-model="form.content"
+                          name="content"
+                        />
+                      </label>
+                    </p>
+                    <p>
+                      <button @click="handleSubmit" v-text="'送信'" />
+                    </p>
+                  </form>
+                </template>
+                <template v-else>
+                  <p v-text="'お問い合わせ頂きありがとうございました。'" />
+                  <p><nuxt-link to="/" v-text="'TOPへ'" /></p>
+                </template>
               </div>
             </div>
           </div>
@@ -96,12 +67,49 @@
 
 <script>
 import SVGElement from "@/components/svgs.vue";
+import axios from "axios";
 
 export default {
   layout: "lower",
 
   components: {
     SVGElement,
+  },
+  data() {
+    return {
+      form: {
+        name: "",
+        email: "",
+        content: "",
+      },
+      finished: false,
+    };
+  },
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&");
+    },
+    handleSubmit() {
+      const axiosConfig = {
+        header: { "Content-Type": "application/x-www-form-urlencoded" },
+      };
+      axios
+        .post(
+          "/",
+          this.encode({
+            "form-name": "contact",
+            ...this.form,
+          }),
+          axiosConfig
+        )
+        .then(() => {
+          this.finished = true;
+        });
+    },
   },
 };
 </script>
