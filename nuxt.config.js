@@ -1,4 +1,14 @@
+require('dotenv').config();
+const { API_KEY, SERVICE_ID} = process.env;
+
 export default {
+
+
+  publicRuntimeConfig: {
+    apiKey: process.env.NODE_ENV !== 'production' ? API_KEY : undefined,
+    serviceId: process.env.NODE_ENV !== 'production' ? SERVICE_ID : undefined,
+  },
+
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
@@ -42,19 +52,15 @@ export default {
     // '@aceforth/nuxt-optimized-images',
   ],
 
-  // optimizedImages: {
-  //   optimizeImages: true,
-  //   optimizeImagesInDev: true,
-  // },
 
 
 
   microcms: {
     options: {
-      serviceDomain: SERVICE_DOMAIN,
-      apiKey: API_KEY,
+      serviceDomain: process.env.SERVICE_DOMAIN,
+      apiKey: process.env.API_KEY,
     },
-    mode: NODE_ENV === 'production' ? 'server' : 'all',
+    mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
