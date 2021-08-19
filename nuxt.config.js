@@ -53,8 +53,6 @@ export default {
   ],
 
 
-
-
   microcms: {
     options: {
       serviceDomain: process.env.SERVICE_DOMAIN,
@@ -63,13 +61,6 @@ export default {
     mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
   },
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  },
 
   generate: {
     async routes() {
