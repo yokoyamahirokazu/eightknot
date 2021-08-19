@@ -50,7 +50,7 @@ export default {
     ['@nuxtjs/moment', ['ja']],
     '~/modules/api-build-json',
     'nuxt-svg-loader',
-    // '@aceforth/nuxt-optimized-images',
+    '@nuxtjs/pwa',
   ],
 
 
