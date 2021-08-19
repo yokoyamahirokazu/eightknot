@@ -1,5 +1,6 @@
 require('dotenv').config();
 const { API_KEY, SERVICE_ID} = process.env;
+import axios from "axios";
 
 export default {
 
