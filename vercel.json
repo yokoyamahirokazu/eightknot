@@ -1,9 +1,14 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "nuxt.config.js",
-      "use": "@nuxtjs/vercel-builder",
-      "config": {}
+      "use": "@nuxtjs/now-builder",
+      "config": {
+        "serverFiles": ["middleware/**"]
+      }
     }
-  ]
+  ],
+  "env": {
+  }
 }
