@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="hamburger-menu">
-      <button class="menu-btn" v-on:click="navOpen = !navOpen">
+      <button class="menu-btn" @click.native="navOpen = !navOpen">
         <span></span>
       </button>
     </div>
@@ -9,7 +9,7 @@
     <nav v-bind:class="{ active: navOpen }">
       <div class="nav_logo">
         <SVGElement name="EightKnot_logo_horizontal" />
-        <button class="menu-btn close" v-on:click="navOpen = !navOpen">
+        <button class="menu-btn close" @click.native="navOpen = !navOpen">
           <span></span>
         </button>
       </div>

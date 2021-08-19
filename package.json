@@ -25,6 +25,8 @@
     "@aceforth/nuxt-optimized-images": "^1.4.0",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/vercel-builder": "^0.21.3",
-    "nuxt-svg-loader": "^1.2.0"
+    "@nuxtjs/vuetify": "^1.12.1",
+    "nuxt-svg-loader": "^1.2.0",
+    "vue-scrollto": "^2.20.0"
   }
 }

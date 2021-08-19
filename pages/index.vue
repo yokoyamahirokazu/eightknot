@@ -179,6 +179,7 @@
                 <div class="blog_txt">
                   <h3 calss="blog_title">{{ post.title[0] }}</h3>
                   <p class="blog_date">{{ getTheDate(post.pubDate[0]) }}</p>
+                  <div　class="blog_descripiton" v-html="post.description[0]"></div>
                 </div>
               </a>
             </li>
@@ -217,14 +218,15 @@ export default {
     },
   },
 
+  filters: {
+    omittedText(text) {
+      return text.length > 10 ? text.slice(0, 10) + "…" : text;
+    },
+  },
+
   components: {
     EyeCatch,
     SVGElement,
-  },
-  filters: {
-    omittedText20(text) {
-      return text.length > 20 ? text.slice(0, 20) + "…" : text;
-    },
   },
 };
 </script>

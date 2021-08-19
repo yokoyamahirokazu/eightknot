@@ -1375,9 +1375,9 @@ ul.team_list li {
   transition: all 0.2s ease;
 }
 
-ul.team_list li:hover {
+/* ul.team_list li:hover {
   background-color: rgba(255, 255, 255, 0.1);
-}
+} */
 
 ul.team_list li:nth-child(3n+1) {
   margin: 0 0 3vw;
@@ -1448,32 +1448,41 @@ ul.blog {
 
 ul.blog li {
   display: block;
-  border-bottom: solid 1px var(--border-lightgray);
   width: calc(50% - 2vw);
-  margin: 0 0 0 4vw;
+  margin: 0 0 4vw 4vw;
   box-sizing: border-box;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 ul.blog li:nth-child(odd) {
-  margin: 0;
+  margin: 0 0 4vw;
 }
 
+
 ul.blog li a {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 20px 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  align-items: stretch;
+  padding: 0;
+  box-sizing: border-box;
   color: var(--primary-900);
   text-decoration: none;
+
+}
+
+ul.blog li a:hover {
+  background-color: var(--primary-050);
 }
 
 .blog_thumbnail {
-  width: 30%;
+  width: 100%;
+  margin: 0 0 0 0;
 }
 
 .blog_txt {
-  width: calc(100% - 30% - 15px);
-  margin: 0 0 0 15px;
+  padding: 15px 20px 15px;
 }
 
 h3.blog_title {
@@ -1483,7 +1492,33 @@ h3.blog_title {
 .blog_date {
   font-size: 0.8rem;
   color: var(--primary-300);
-  margin: 10px 0 0 0;
+  margin: 5px 0 0 0;
+}
+
+.blog_descripiton {
+  font-size: 0.9rem;
+  margin: 20px 0 0 0;
+}
+
+.blog_descripiton p,
+.blog_descripiton h2 {
+  display: inline;
+  margin: 0;
+  font-weight: normal;
+  font-size: 0.9rem;
+
+}
+
+.blog_descripiton a {
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+
+.blog_descripiton img {
+  display: none;
 }
 
 @media screen and (max-width:767px) {
@@ -1493,11 +1528,16 @@ h3.blog_title {
 
   ul.blog li {
     width: 100%;
-    margin: 0;
+    margin: 0 0 4vw;
   }
 
-  ul.blog li h3 {
-    font-size: 1rem;
+  ul.blog li:first-child {
+    width: 100%;
+    margin: 0 0 4vw;
+  }
+
+  .blog_txt {
+    padding: 5px 5px 20px;
   }
 
 }
