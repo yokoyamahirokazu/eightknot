@@ -3,7 +3,7 @@
     <EyeCatch />
 
     <div class="contents">
-      <section class="bg_dark news_section" id="news">
+      <section class="bg_dark news_section bg_logo" id="news">
         <div class="news_inner news_flex">
           <div class="news_flex_left">
             <div class="headline_box">
@@ -26,7 +26,7 @@
                     >
                   </p>
                 </a>
-                <nuxt-link v-if="!item.blankLink" :to="`/${item.id}`">
+                <nuxt-link v-if="!item.blankLink" :to="`/news/${item.id}`">
                   <h3>{{ item.title }}</h3>
                   <p class="post_date">
                     {{ getTheDate(item.publishedAt) }}
@@ -38,7 +38,7 @@
               </li>
             </ul>
             <div class="view_more_box">
-              <nuxt-link class="btn btn_white" to="">View More</nuxt-link>
+              <nuxt-link class="btn btn_white" to="/news">View More</nuxt-link>
             </div>
           </div>
         </div>
@@ -54,6 +54,14 @@
           </div>
           <ul class="vision_flex">
             <li>
+              <div class="vision_flex_img">
+                <div class="img_circle vision_img">
+                  <img
+                    src="~assets/img/vision_1.jpg"
+                    alt="ロボティクスの技術を小型船舶に"
+                  />
+                </div>
+              </div>
               <div class="vision_flex_txt">
                 <h3 class="vision_title">
                   <span
@@ -66,16 +74,16 @@
                   ロボティクスの技術を船舶に適用させ、港と港つなぐ自律操船技術を開発し、それを利用したより快適な水上モビリティを開発します。
                 </p>
               </div>
+            </li>
+            <li>
               <div class="vision_flex_img">
                 <div class="img_circle vision_img">
                   <img
-                    src="~assets/img/vision_1.jpg"
-                    alt="ロボティクスの技術を小型船舶に"
+                    src="~assets/img/vision_2.jpg"
+                    alt="エミッションフリー"
                   />
                 </div>
               </div>
-            </li>
-            <li>
               <div class="vision_flex_txt">
                 <h3 class="vision_title">
                   <span>Emission<br />free</span>
@@ -85,16 +93,16 @@
                   ソーラーパネルを搭載したEV自律航行船を用いて物流・移動時の環境負荷を低減します。
                 </p>
               </div>
+            </li>
+            <li>
               <div class="vision_flex_img">
                 <div class="img_circle vision_img">
                   <img
-                    src="~assets/img/vision_2.jpg"
-                    alt="エミッションフリー"
+                    src="~assets/img/vision_3.jpg"
+                    alt="好きなときに乗れる"
                   />
                 </div>
               </div>
-            </li>
-            <li>
               <div class="vision_flex_txt">
                 <h3 class="vision_title">
                   <span>On demand<br />Vessel</span>
@@ -104,16 +112,13 @@
                   小型のEV自律航行船をネットワークを介して管理し、利用者が好きな時間に移動できるなどの水上移動を容易にするサービスの実現を目指します。
                 </p>
               </div>
-              <div class="vision_flex_img">
-                <div class="img_circle vision_img">
-                  <img
-                    src="~assets/img/vision_3.jpg"
-                    alt="好きなときに乗れる"
-                  />
-                </div>
-              </div>
             </li>
             <li>
+              <div class="vision_flex_img">
+                <div class="img_circle vision_img">
+                  <img src="~assets/img/vision_4.jpg" alt="変わる暮らし" />
+                </div>
+              </div>
               <div class="vision_flex_txt">
                 <h3 class="vision_title">
                   <span>Change in<br />Lifestyle</span>
@@ -122,11 +127,6 @@
                 <p class="vision_body">
                   ソーラーパネルを搭載したEV自律航行船を用いて物流・移動時の環境負荷を低減します。
                 </p>
-              </div>
-              <div class="vision_flex_img">
-                <div class="img_circle vision_img">
-                  <img src="~assets/img/vision_4.jpg" alt="変わる暮らし" />
-                </div>
               </div>
             </li>
           </ul>
