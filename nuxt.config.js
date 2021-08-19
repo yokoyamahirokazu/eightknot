@@ -69,5 +69,21 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  generate: {
+    async routes() {
+      const pages = await axios
+        .get('https://8kt.microcms.io/api/v1/news/', {
+          headers: { 'X-API-KEY': process.env.API_KEY }
+        })
+        .then((res) =>
+          res.data.contents.map((content) => ({
+            route: `/news/${content.id}`,
+            payload: content
+          }))
+        )
+      return pages
+    }
+  },
 }

@@ -15,49 +15,156 @@
             </div>
           </div>
           <div class="content_flex_right">
-            <div class="content_box_wrapper">
-              <h2 class="headline_2">Contact Form</h2>
-              <div class="content_box">
-                <template v-if="!finished">
-                  <form
-                    name="contact"
-                    method="POST"
-                    data-netlify="true"
-                    @submit.prevent
-                  >
-                    <p>
-                      <label>
-                        お名前:
-                        <input v-model="form.name" type="text" name="name" />
-                      </label>
-                    </p>
-                    <p>
-                      <label>
-                        メールアドレス:
-                        <input v-model="form.email" type="email" name="email" />
-                      </label>
-                    </p>
-                    <p>
-                      <label>
-                        お問い合わせ内容:
+            <template v-if="!finished">
+              <div class="content_box_wrapper">
+                <h2 class="headline_2">Contact Form</h2>
+
+                <div class="content_box">
+                  <p>
+                    当社へのお問い合わせ、メッセージはこちらからお願いいたします。<br />
+                    営業時間、休業日などの都合により、回答までにお時間を頂く場合があります。<br />
+                    ※お問い合わせの内容によっては、回答できない場合や回答にお時間がかかる場合がありますのでご了承ください。<br />
+                    <span class="error">*必須</span>
+                  </p>
+                  <div class="contact_form">
+                    <form
+                      name="contact"
+                      method="POST"
+                      data-netlify="true"
+                      @submit.prevent
+                    >
+                      <div class="contact_form_block">
+                        <label
+                          >メールアドレス<span class="required">*</span></label
+                        >
+                        <input
+                          v-model="form.email"
+                          type="email"
+                          name="email"
+                          placeholder="メールアドレス"
+                        />
+                      </div>
+                      <div class="contact_form_block">
+                        <label>お名前<span class="required">*</span></label>
+                        <input
+                          v-model="form.name"
+                          type="text"
+                          name="name"
+                          placeholder="回答を入力"
+                        />
+                      </div>
+                      <div class="contact_form_block">
+                        <label
+                          >会社・団体名<span
+                            >ご所属組織のない場合、「個人」とご記入ください。</span
+                          ></label
+                        >
+                        <input
+                          v-model="form.company"
+                          type="text"
+                          name="company"
+                          placeholder="回答を入力"
+                        />
+                      </div>
+                      <div class="contact_form_block">
+                        <label>電話番号</label>
+                        <input
+                          v-model="form.tel"
+                          type="text"
+                          name="tel"
+                          placeholder="回答を入力"
+                        />
+                      </div>
+                      <div class="contact_form_block">
+                        <label
+                          >お問い合わせ内容<span class="required"
+                            >*</span
+                          ></label
+                        >
+                        <label class="radio" for="contacttype_1">
+                          <input
+                            v-model="form.contacttype"
+                            type="radio"
+                            name="contacttype"
+                            value="見積依頼"
+                            id="contacttype_1"
+                          />
+                          見積依頼
+                        </label>
+                        <label class="radio" for="contacttype_2">
+                          <input
+                            v-model="form.contacttype"
+                            type="radio"
+                            name="contacttype"
+                            value="取材依頼"
+                            id="contacttype_2"
+                          />
+                          取材依頼
+                        </label>
+                        <label class="radio" for="contacttype_3">
+                          <input
+                            v-model="form.contacttype"
+                            type="radio"
+                            name="contacttype"
+                            value="求人へのご応募"
+                            id="contacttype_3"
+                          />
+                          求人へのご応募
+                        </label>
+                        <div class="typeother">
+                          <label class="radio" for="contacttype_4">
+                            <input
+                              v-model="form.contacttype"
+                              type="radio"
+                              name="contacttype"
+                              value="その他"
+                              id="contacttype_4"
+                            />
+                            その他
+                          </label>
+                          <input
+                            v-model="form.typeother"
+                            type="text"
+                            name="typeother"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="contact_form_block">
+                        <label
+                          >お問い合わせ詳細<span class="required"
+                            >*</span
+                          ></label
+                        >
                         <textarea
                           id="form-content"
                           v-model="form.content"
                           name="content"
+                          placeholder="回答を入力"
                         />
-                      </label>
-                    </p>
-                    <p>
-                      <button @click="handleSubmit" v-text="'送信'" />
-                    </p>
-                  </form>
-                </template>
-                <template v-else>
-                  <p v-text="'お問い合わせ頂きありがとうございました。'" />
-                  <p><nuxt-link to="/" v-text="'TOPへ'" /></p>
-                </template>
+                      </div>
+                      <p>
+                        <button
+                          class="btn"
+                          @click="handleSubmit"
+                          v-text="'送信する'"
+                        />
+                      </p>
+                    </form>
+                  </div>
+                </div>
               </div>
-            </div>
+            </template>
+            <template v-else>
+              <div class="content_box_wrapper">
+                <h2 class="headline_2">Thank You</h2>
+
+                <div class="content_box">
+                  <p v-text="'お問い合わせ頂きありがとうございました。'" />
+                  <p><nuxt-link class="btn" to="/" v-text="'TOPへ'" /></p>
+                </div>
+              </div>
+            </template>
           </div>
         </div>
       </div>
@@ -80,6 +187,10 @@ export default {
       form: {
         name: "",
         email: "",
+        tel: "",
+        company: "",
+        contacttype: "",
+        typeother: "",
         content: "",
       },
       finished: false,
