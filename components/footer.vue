@@ -7,12 +7,12 @@
         </div>
         <ul class="footer_nav">
           <li>
-            <nuxt-link @click.native="navOpen = !navOpen" to="/"
+            <nuxt-link v-on:click.native="navOpen = !navOpen" to="/"
               ><SVGElement name="home" /> Home</nuxt-link
             >
           </li>
           <li>
-            <nuxt-link @click.native="navOpen = !navOpen" to="/news"
+            <nuxt-link v-on:click.native="navOpen = !navOpen" to="/news"
               ><SVGElement name="news" /> News</nuxt-link
             >
           </li>
@@ -20,18 +20,18 @@
             <a
               href="https://note.com/8kt/"
               target="_blank"
-              @click.native="navOpen = !navOpen"
+              v-on:click.native="navOpen = !navOpen"
               to="#blog"
               ><SVGElement name="blog" /> Blog</a
             >
           </li>
           <li>
-            <nuxt-link @click.native="navOpen = !navOpen" to="/about"
+            <nuxt-link v-on:click.native="navOpen = !navOpen" to="/about"
               ><SVGElement name="about" /> About</nuxt-link
             >
           </li>
           <li>
-            <nuxt-link @click.native="navOpen = !navOpen" to="/contact"
+            <nuxt-link v-on:click.native="navOpen = !navOpen" to="/contact"
               ><SVGElement name="contact" /> Contact</nuxt-link
             >
           </li>
