@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { API_KEY, SERVICE_ID} = process.env;
+const { API_KEY, SERVICE_ID } = process.env;
 import axios from "axios";
 
 export default {
@@ -46,7 +46,7 @@ export default {
       {
         name: 'twitter:card', content: 'summary_large_image'
       },
-      ]
+    ]
   },
 
   css: [
@@ -61,7 +61,7 @@ export default {
     { src: '~/plugins/vue-scrollto' },
     { src: '~/plugins/myFilter' },
   ],
-   build: {
+  build: {
     transpile: ['vee-validate'], // 追加
   },
 
@@ -74,7 +74,7 @@ export default {
     ['@nuxtjs/moment', ['ja']],
     '~/modules/api-build-json',
     'nuxt-svg-loader',
-    '@nuxtjs/pwa',
+    '@nuxtjs/composition-api/module'
   ],
 
 
