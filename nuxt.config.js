@@ -80,10 +80,10 @@ export default {
 
   microcms: {
     options: {
-      serviceDomain: process.env.SERVICE_DOMAIN,
-      apiKey: process.env.API_KEY,
+      serviceDomain: SERVICE_DOMAIN,
+      apiKey: API_KEY,
     },
-    mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
+    mode: NODE_ENV === 'production' ? 'server' : 'all',
   },
 
 
@@ -91,7 +91,7 @@ export default {
     async routes() {
       const pages = await axios
         .get('https://8kt.microcms.io/api/v1/news/', {
-          headers: { 'X-API-KEY': process.env.API_KEY }
+          headers: { 'X-API-KEY': API_KEY }
         })
         .then((res) =>
           res.data.contents.map((content) => ({
