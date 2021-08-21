@@ -17,12 +17,16 @@
     "nuxt": "^2.15.7",
     "nuxt-microcms-module": "^1.0.1",
     "vee-validate": "^3.4.11",
+    "vue-class-component": "^7.2.6",
     "vue-js-modal": "^2.0.1",
     "vue-loaders": "^4.1.4",
+    "vue-property-decorator": "^9.1.2",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
     "@aceforth/nuxt-optimized-images": "^1.4.0",
+    "@nuxt/types": "^2.15.8",
+    "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/vercel-builder": "^0.21.3",
     "@nuxtjs/vuetify": "^1.12.1",
