@@ -164,7 +164,7 @@
             <p class="sub_headline">list of Blog post</p>
           </div>
 
-          <!-- <ul v-if="$store.state.jsonData[0]" class="blog">
+          <ul v-if="$store.state.jsonData[0]" class="blog">
             <li
               v-for="(post, index) in $store.state.jsonData[0].note.items"
               :key="index">
@@ -182,7 +182,7 @@
                 </div>
               </a>
             </li>
-          </ul> -->
+          </ul>
         </div>
       </section>
     </div>
