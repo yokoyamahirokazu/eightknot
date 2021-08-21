@@ -164,11 +164,10 @@
             <p class="sub_headline">list of Blog post</p>
           </div>
 
-          <ul v-if="$store.state.jsonData[0]" class="blog">
+          <!-- <ul v-if="$store.state.jsonData[0]" class="blog">
             <li
               v-for="(post, index) in $store.state.jsonData[0].note.items"
-              :key="index"
-            >
+              :key="index">
               <a :href="post.link[0]" target="_blank" v-touch:tap>
                 <img
                   class="blog_thumbnail"
@@ -183,7 +182,7 @@
                 </div>
               </a>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </section>
     </div>
