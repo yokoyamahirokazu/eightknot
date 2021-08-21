@@ -1,9 +1,11 @@
 {
   "version": 2,
   "builds": [
-		{
-			"src": "package.json",
-			"use": "now-sapper"
-		}
-	]
+    {
+      "src": "package.json",
+      "use": "@nuxtjs/vercel-builder",
+      "config": {
+      }
+    }
+  ]
 }
